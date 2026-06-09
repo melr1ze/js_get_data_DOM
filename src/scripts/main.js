@@ -11,7 +11,9 @@ if (populationElements.length > 0 && totalContainer && averageContainer) {
     const cleanString = element.textContent.replace(/,/g, '');
     const populationNumber = Number(cleanString);
 
-    totalPopulation += populationNumber;
+    if (!Number.isNaN(populationNumber)) {
+      totalPopulation += populationNumber;
+    }
   });
 
   const count = populationElements.length;
